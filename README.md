@@ -1,5 +1,19 @@
 # restful_django
 
+## Setup
+
+```shell
+pip install -r requirements.txt
+```
+
+```shell
+python manage.py makemigrations; python manage.py migrate
+```
+
+```shell
+python manage.py runserver
+```
+
 
 ## GET 
 
