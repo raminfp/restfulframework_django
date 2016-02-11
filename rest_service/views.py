@@ -1,8 +1,9 @@
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from RestService.SerializersModels.serializers import SaminSerializer
-from RestService.APIModel.SaminAPIModel import Samin
+
+from rest_service.serializers import SaminSerializer
+from rest_service.models import Samin
 
 
 @api_view(['GET', 'POST'])
@@ -25,6 +26,7 @@ def api_select(request):
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
 @api_view(['GET','DELETE'])
 def api_del(request, pk):
 
@@ -39,16 +41,17 @@ def api_del(request, pk):
 
 
 @api_view(['GET', 'PUT'])
-def api_up(request,pk):
+def api_up(request, pk):
 
-     try:
+    try:
         getdata = Samin.objects.get(pk=pk)
-     except Samin.DoesNotExist:
+    except Samin.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
-     if request.method == 'PUT':
+    if request.method == 'PUT':
         serializer = SaminSerializer(getdata, data=request.POST.dict())
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+

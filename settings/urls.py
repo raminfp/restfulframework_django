@@ -14,22 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 
-
-
 from django.conf.urls import url
-from django.contrib import admin
-from RestService.APIViews.views import api_select,api_del,api_up
+from rest_service.views import api_select, api_del, api_up
 
 
 urlpatterns = [
-
-    #url(r'^admin/', admin.site.urls),
     url(r'selectall^$', api_select ),
     url(r'^$', api_select ),
-    #url(r'selectone^$', api_select ),
-    #url(r'uploadimg^$', api_select ),
     url(r'insert^$', api_select ),
     url(r'^update/(?P<pk>[0-9]+)$', api_up ),
     url(r'^delete/(?P<pk>[0-9]+)$', api_del ),
-
 ]

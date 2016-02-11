@@ -4,4 +4,4 @@ from django.apps import AppConfig
 
 
 class RestserviceConfig(AppConfig):
-    name = 'RestService'
+    name = 'rest_service'
