@@ -1,21 +1,44 @@
 # restful_django
 
+## Setup
+
+```shell
+pip install -r requirements.txt
+```
+
+```shell
+python manage.py makemigrations; python manage.py migrate
+```
+
+```shell
+python manage.py runserver
+```
+
 
 ## GET 
 
+```shell
 curl http://localhost:8000/
+```
 
 ## POST
 
-curl -X POST http://localhost:8000/ -d "Firstname=ramin world&Lastname=Farajpour&Email=ramin@blackhat.gmail.com&Address=bandapiiii"
+```shell
+curl -X POST http://localhost:8000/ -d "firstname=ramin world&lastname=Farajpour&email=ramin@blackhat.gmail.com&address=bandapiiii"
+```
 
 ## PUT
 
- curl -X PUT http://127.0.0.1:8000/update/2 -d "Firstname=mostafa&Lastname=mami&Email=blackhat@gmail.com&Address=iran"
+```shell
+curl -X PUT http://127.0.0.1:8000/update/1 -d "firstname=mostafa&lastname=mami&email=blackhat@gmail.com&address=iran"
+```
 
 ## DELETE 
 
-curl -X DELETE http://127.0.0.1:8000/delete/3
+```shell
+curl -X DELETE http://127.0.0.1:8000/delete/1
+```
 
-########################
-Soon other future 
+## TODO
+
+- [ ] New features
