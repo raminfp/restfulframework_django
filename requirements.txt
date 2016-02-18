@@ -1,2 +1,4 @@
 django
 djangorestframework
+bleach
+suds
